@@ -1,32 +1,33 @@
+# Dependencies
+markdown:         kramdown
+highlighter:      rouge
+
+kramdown:
+  auto_ids: true
+
 # Permalinks
-permalink:           pretty
+permalink:        pretty
 
-# Setup
-title:               Poole
-tagline:             The Jekyll Butler
-url:                 http://getpoole.com
-paginate:            1
-baseurl:             ""
+# Server
+source:           docs
+destination:      _site
+host:             0.0.0.0
+port:             9001
+baseurl:          ""
+url:              https://eresearch.jcu.io
+encoding:         UTF-8
+timezone:         Australia/Brisbane
+exclude:          [assets/scss/]
 
-# Assets
-#
-# We specify the directory for Jekyll so we can use @imports.
-sass:
-  sass_dir:          _sass
-  style:            :compressed
-
-# About/contact
-author:
-  name:              Mark Otto
-  url:               https://twitter.com/mdo
-  email:             markdotto@gmail.com
+gems:
+  - jekyll-redirect-from
+  - jekyll-sitemap
 
 # Custom vars
-version:             2.0.0
-github:
-  repo:              https://github.com/poole/poole
+current_version:  0.1
+repo:             https://github.com/jcu/eresearch-blog-web-framework
 
-# Gems
-gems:
-  - jekyll-paginate
-  - jekyll-gist
+
+
+blog:             http://blog.getbootstrap.com
+expo:             http://expo.getbootstrap.com

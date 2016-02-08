@@ -1,0 +1,26 @@
+//
+// Content: body content with features and styles befitting the CMS block
+//
+.jcu-content {
+  padding-top: $spacer-y;
+  padding-bottom: $spacer-y;
+  margin-bottom: $spacer-y;
+  background-color: $jcu-content-bg-color;
+
+  @media print {
+    a:link::after,
+    a:visited::after {
+      font-size: 90%;
+      content: " (" attr(href) ") ";
+    }
+
+    a[href^="/"]::after {
+      content: " (#{$jcu-content-link-print-prefix}" attr(href) ") ";
+    }
+  }
+}
+
+.jcu-content--short-content {
+  min-height: ($jcu-exposition-max-height - $jcu-header-height);
+}
+

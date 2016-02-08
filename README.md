@@ -1,121 +1,118 @@
-# Poole
+# JCU Web Framework
 
-*The Strange Case of Dr. Jekyll and Mr. Hyde* tells the story of a lawyer investigating the connection of two persons, Dr. Henry Jekyll and Mr. Edward Hyde. Chief among the novel's supporting cast is a man by the name of Mr. Poole, Dr. Jekyll's loyal butler.
+The JCU Web Framework is a collection of reusable front-end web components and
+examples for use by the University community. Based upon
+[Bootstrap](http://getbootstrap.com), this framework makes for faster and easier
+web development, and aims to foster consistency between web projects.
 
------
+To get started, check out the [documentation](https://web.jcu.io).
 
-Poole is the butler for [Jekyll](http://jekyllrb.com), the static site generator. It's designed and developed by [@mdo](https://twitter.com/mdo) to provide a clear and concise foundational setup for any Jekyll site. It does so by furnishing a full vanilla Jekyll install with example templates, pages, posts, and styles.
+## Table of contents
 
-![Poole](https://f.cloud.github.com/assets/98681/1834359/71ae4048-73db-11e3-9a3c-df38eb170537.png)
+- [Copyright and licence](#copyright-and-licence)
+- [Quick start](#quick-start)
+- [Bugs and feature requests](#bugs-and-feature-requests)
+- [Documentation](#documentation)
+- [Versioning](#versioning)
+- [Developers](#developers)
 
-See Poole in action with [the demo site](http://demo.getpoole.com).
+## Copyright and disclaimer
 
-There are currently two official themes built on Poole:
+Portions of code and documentation copyright 2016 James Cook University and
+2011-2016 Twitter, Inc.
 
-* [Hyde](http://hyde.getpoole.com)
-* [Lanyon](http://lanyon.getpoole.com)
+Content, including text, imagery and styles, included in documentation and
+examples has been drawn from publicly-available sources and is used solely to
+illustrate the functionality present within the JCU Web Framework.
 
-Individual theme feedback and bug reports should be submitted to the theme's individual repository.
+Documentation is a derivative of that provided in Bootstrap at
+<http://getbootstrap.com>, used under [Creative Commons
+Attribution (CC-BY 3.0)](https://creativecommons.org/licenses/by/3.0/) licensing.
 
+[Open Sans font](https://www.google.com/fonts/specimen/Open+Sans) licensed under
+Apache License, version 2.0.
 
-## Contents
-
-- [Usage](#usage)
-- [Options](#options)
-  - [Rems, `font-size`, and scaling](#rems-font-size-and-scaling)
-- [Development](#development)
-- [Author](#author)
-- [License](#license)
-
-
-## Usage
-
-### 1. Install dependencies
-
-Poole is built on Jekyll and uses its built-in SCSS compiler to generate our CSS. Before getting started, you'll need to install the Jekyll gem:
-
-```bash
-$ gem install jekyll
-```
-
-**Windows users:** Windows users have a bit more work to do, but luckily [@juthilo](https://github.com/juthilo) has your back with his [Run Jekyll on Windows](https://github.com/juthilo/run-jekyll-on-windows) guide.
-
-**Need syntax highlighting?** Poole includes support for Pygments or Rouge, so install your gem of choice to make use of the built-in styling. Read more about this [in the Jekyll docs](http://jekyllrb.com/docs/templates/#code_snippet_highlighting).
-
-### 2a. Quick start
-
-To help anyone with any level of familiarity with Jekyll quickly get started, Poole includes everything you need for a basic Jekyll site. To that end, just download Poole and start up Jekyll.
-
-### 2b. Roll your own Jekyll site
-
-Folks wishing to use Jekyll's templates and styles can do so with a little bit of manual labor. Download Poole and then copy what you need (likely `_layouts/`, `*.html` files, `atom.xml` for RSS, and `public/` for CSS, JS, etc.).
-
-### 3. Running locally
-
-To see your Jekyll site with Poole applied, start a Jekyll server. In Terminal, from `/poole` (or whatever your Jekyll site's root directory is named):
-
-```bash
-$ jekyll serve
-```
-
-Open <http://localhost:4000> in your browser, and voilà.
-
-### 4. Serving it up
-
-If you host your code on GitHub, you can use [GitHub Pages](https://pages.github.com) to host your project.
-
-1. Fork this repo and switch to the `gh-pages` branch.
-  1. If you're [using a custom domain name](https://help.github.com/articles/setting-up-a-custom-domain-with-github-pages), modify the `CNAME` file to point to your new domain.
-  2. If you're not using a custom domain name, **modify the `baseurl` in `_config.yml`** to point to your GitHub Pages URL. Example: for a repo at `github.com/username/poole`, use `http://username.github.io/poole/`. **Be sure to include the trailing slash.**
-3. Done! Head to your GitHub Pages URL or custom domain.
-
-No matter your production or hosting setup, be sure to verify the `baseurl` option file and `CNAME` settings. Not applying this correctly can mean broken styles on your site.
-
-## Options
-
-Poole includes some customizable options, typically applied via classes on the `<body>` element.
+[WebHostingHub Glyph
+customizer](https://github.com/gustavohenke/webhostinghub-glyphs) licensed under
+MIT licensing. [Original font](http://www.webhostinghub.com/glyphs/#howToUse) is
+licensed under the SIL Open Font License.
 
 
-### Rems, `font-size`, and scaling
+## Quick start
 
-Poole is built almost entirely with `rem`s (instead of pixels). `rem`s are like `em`s, but instead of building on the immediate parent's `font-size`, they build on the root element, `<html>`.
+Several quick start options are available:
 
-By default, we use the following:
+- [Download the latest release.](https://github.com/jcu-eresearch/jcu-web-framework/archive/v4.0.0-alpha.2.zip)
+- Clone the repo: `git clone https://github.com/jcu-eresearch/jcu-web-framework.git`
 
-```css
-html {
-  font-size: 16px;
-  line-height: 1.5;
-}
-@media (min-width: 38em) {
-  html {
-    font-size: 20px;
-  }
-}
+Read the [online documentation](https://web.jcu.io) for information on the
+framework contents, templates and examples, and more.
+
+### What's included
+
+Within the download you'll find the following directories and files, logically
+grouping common assets and providing both compiled and minified variations.
+You'll see something like this:
 
 ```
+jcu-web-framework/
+├── css/
+│   ├── jcu.css
+│   ├── jcu.css.map
+│   ├── jcu.min.css
+│   └── jcu.min.css.map
+├── js/
+│   ├── jcu.js
+│   └── jcu.min.js
+├── images/
+│   ├── *.{svg,jpg,ico}
+│   └── ...
+└── font/
+    ├── *.{eot,svg,ttf,woff}
+    └── ...
+```
 
-To easily scale your site's typography and components, simply customize the base `font-size`s here.
+We provide compiled CSS and JS (`jcu.*`), as well as compiled and minified
+CSS and JS (`jcu.min.*`). CSS [source
+maps](https://developer.chrome.com/devtools/docs/css-preprocessors)
+(`jcu.*.map`) are available for use with certain browsers' developer
+tools.
+
+In addition, we provide a variety of imagery for use within pages (such as
+backgrounds images, for which there are utility CSS classes available), and
+fonts for use in typography and as iconography.
+
+## Bugs and feature requests
+
+Found a bug or have a feature request? Search for existing and closed issues on
+our [issue tracker](https://github.com/jcu-eresearch/jcu-web-framework/issues).
+If your problem or idea is not addressed yet, [please open a new
+issue](https://github.com/jcu-eresearch/jcu-web-framework/issues/new).
 
 
-## Development
+## Documentation
 
-Poole has two branches, but only one is used for active development.
-
-- `master` for development.  **All pull requests should be to submitted against `master`.**
-- `gh-pages` for our hosted site, which includes our analytics tracking code. **Please avoid using this branch.**
-
-CSS is handled via Jeykll's built-in Sass compiler. Source Sass files are located in `_sass/`, included into `styles.scss`, and compile to `styles.css`.
-
-## Author
-
-**Mark Otto**
-- <https://github.com/mdo>
-- <https://twitter.com/mdo>
+Documentation, included in this repo in the root directory, is built with
+[Jekyll](http://jekyllrb.com) and publicly hosted at <https://web.jcu.io>. The
+docs may also be run locally.
 
 
-## License
+## Versioning
 
-Open sourced under the [MIT license](LICENSE.md).
+The JCU Web Framework follows Bootstrap's versioning and uses Semantic
+Versioning.
 
-<3
+> For transparency into our release cycle and in striving to maintain backward
+compatibility, Bootstrap is maintained under [the Semantic Versioning
+guidelines](http://semver.org/). Sometimes we screw up, but we'll adhere to
+those rules whenever possible.
+
+See [the Releases section of our GitHub
+project](https://github.com/jcu-eresearch/jcu-web-framework/releases) for changelogs for each
+release version.
+
+## Developers
+
+**David Beitey**
+
+- <https://github.com/davidjb>
